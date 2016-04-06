@@ -14,9 +14,8 @@
 		31DAEA401CB39B7F00210FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31DAEA3E1CB39B7F00210FE3 /* Main.storyboard */; };
 		31DAEA421CB39B7F00210FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31DAEA411CB39B7F00210FE3 /* Assets.xcassets */; };
 		31DAEA451CB39B7F00210FE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31DAEA431CB39B7F00210FE3 /* LaunchScreen.storyboard */; };
-		31DAEA4D1CB3ABD300210FE3 /* DragableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DAEA4C1CB3ABD300210FE3 /* DragableCard.swift */; };
+		31DAEA4D1CB3ABD300210FE3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DAEA4C1CB3ABD300210FE3 /* Card.swift */; };
 		31DAEA531CB3B06C00210FE3 /* Index2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DAEA521CB3B06C00210FE3 /* Index2D.swift */; };
-		31DAEA551CB3B33300210FE3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DAEA541CB3B33300210FE3 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +28,8 @@
 		31DAEA411CB39B7F00210FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31DAEA441CB39B7F00210FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31DAEA461CB39B7F00210FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31DAEA4C1CB3ABD300210FE3 /* DragableCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableCard.swift; sourceTree = "<group>"; };
+		31DAEA4C1CB3ABD300210FE3 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		31DAEA521CB3B06C00210FE3 /* Index2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index2D.swift; sourceTree = "<group>"; };
-		31DAEA541CB3B33300210FE3 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,7 @@
 		31DAEA351CB39B7F00210FE3 /* Puzzle1 */ = {
 			isa = PBXGroup;
 			children = (
-				31DAEA4C1CB3ABD300210FE3 /* DragableCard.swift */,
+				31DAEA4C1CB3ABD300210FE3 /* Card.swift */,
 				31DAEA361CB39B7F00210FE3 /* AppDelegate.swift */,
 				31DAEA381CB39B7F00210FE3 /* GameScene.sks */,
 				31DAEA3A1CB39B7F00210FE3 /* GameScene.swift */,
@@ -74,7 +72,6 @@
 				31DAEA431CB39B7F00210FE3 /* LaunchScreen.storyboard */,
 				31DAEA461CB39B7F00210FE3 /* Info.plist */,
 				31DAEA521CB3B06C00210FE3 /* Index2D.swift */,
-				31DAEA541CB3B33300210FE3 /* Card.swift */,
 			);
 			path = Puzzle1;
 			sourceTree = "<group>";
@@ -152,11 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				31DAEA3B1CB39B7F00210FE3 /* GameScene.swift in Sources */,
-				31DAEA551CB3B33300210FE3 /* Card.swift in Sources */,
 				31DAEA3D1CB39B7F00210FE3 /* GameViewController.swift in Sources */,
 				31DAEA371CB39B7F00210FE3 /* AppDelegate.swift in Sources */,
 				31DAEA531CB3B06C00210FE3 /* Index2D.swift in Sources */,
-				31DAEA4D1CB3ABD300210FE3 /* DragableCard.swift in Sources */,
+				31DAEA4D1CB3ABD300210FE3 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +302,7 @@
 				31DAEA4B1CB39B7F00210FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

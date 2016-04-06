@@ -12,12 +12,13 @@ class GameScene: SKScene , CardDelegate{
     
     let columns = 2
     let rows = 2
-    var targets = [DragableCard]()
-    var cards = [DragableCard]()
+    var targets = [Card]()
+    var cards = [Card]()
     let offsetX:CGFloat = 200
     let offsetY:CGFloat = 200
     var cardWidthInPixels:CGFloat = 0
     var cardHeightInPixels:CGFloat = 0
+    var controller:UIViewController?
     
     
     override func didMoveToView(view: SKView) {
@@ -31,12 +32,12 @@ class GameScene: SKScene , CardDelegate{
         let cardHeight:CGFloat = 1.0 / CGFloat(rows)
         
         //cut image
-        var card:DragableCard
-        var target:DragableCard
+        var card:Card
+        var target:Card
         for i in 0..<columns{
             for j in 0..<rows{
                 //sources
-                card = DragableCard(texture: SKTexture(rect: CGRectMake(CGFloat(i)*cardWidth, CGFloat(j)*cardHeight, cardWidth, cardHeight), inTexture: texture))
+                card = Card(texture: SKTexture(rect: CGRectMake(CGFloat(i)*cardWidth, CGFloat(j)*cardHeight, cardWidth, cardHeight), inTexture: texture))
                 card.index.x = i
                 card.index.y = j
                 card.userInteractionEnabled = true
@@ -49,7 +50,7 @@ class GameScene: SKScene , CardDelegate{
                 addChild(card)
                 
                 //targets
-                target = DragableCard(color: UIColor.grayColor(), size: CGSizeMake(cardWidthInPixels, cardHeightInPixels))
+                target = Card(color: UIColor.grayColor(), size: CGSizeMake(cardWidthInPixels, cardHeightInPixels))
                 target.index.x = i
                 target.index.y = j
                 target.position.x = (cardWidthInPixels+1) * CGFloat(i) + offsetX
@@ -60,7 +61,7 @@ class GameScene: SKScene , CardDelegate{
         }
     }
     
-    func onDragEnded(card: DragableCard) {
+    func onDragEnded(card: Card) {
         for t in targets{
             if CGRectContainsPoint(t.frame, card.position) {
                 card.position.x = cardWidthInPixels*CGFloat(t.index.x) + offsetX
@@ -73,21 +74,25 @@ class GameScene: SKScene , CardDelegate{
             }
         }
         
-        //check
+        check()
+    }
+    
+    
+    func check() {
         var suc = true
         for c in cards {
-            if c.relatedCard?.index.x != c.index.x ||
-            c.relatedCard?.index.y != c.index.y{
+            if c.relatedCard?.index.equals(c.index) == nil {
                 suc = false
                 break
             }
         }
         if suc {
-            print("成功")
+            let alert = UIAlertController(title: "提示", message: "完成", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            controller?.presentViewController(alert, animated: true, completion: nil)
         }
-        
-        
     }
+    
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
