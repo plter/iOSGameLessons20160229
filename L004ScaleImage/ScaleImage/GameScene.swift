@@ -31,6 +31,7 @@ class GameScene: SKScene {
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
+        
         if touches.count == 2{
             let theDistance = getDistance(touches[touches.startIndex].locationInNode(self), p2: touches[touches.startIndex.advancedBy(1)].locationInNode(self))
             
